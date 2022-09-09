@@ -11,7 +11,7 @@ target_compile_options(union_find PRIVATE $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMP
 
 OPTION(BUILD_WITH_DOCS "Generate Docs" ON)
 
-include_directories(include)
+target_include_directories(union_find PUBLIC include)
 
 if(DOXYGEN_FOUND)
     if(BUILD_WITH_DOCS)
