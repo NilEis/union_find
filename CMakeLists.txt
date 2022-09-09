@@ -3,6 +3,7 @@ project(union_find VERSION 0.1.0)
 find_package(Doxygen)
 
 add_library(union_find src/main.c)
+add_library(union_find_static STATIC src/main.c)
 
 set_target_properties(union_find PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED True C_EXTENSIONS Off)
 
