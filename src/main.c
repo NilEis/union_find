@@ -1,12 +1,16 @@
 #include "union_find.h"
 #include <stdlib.h>
 
+int id = 0;
+
 union_find_t *uf_make_set(void *elem)
 {
     union_find_t *ret = (union_find_t *)malloc(sizeof(union_find_t));
     ret->height = 1;
     ret->parent = ret;
     ret->value = elem;
+    ret->id = id;
+    id++;
     return ret;
 }
 
@@ -17,7 +21,7 @@ union_find_t *uf_find(union_find_t *elem)
         return NULL;
     }
     union_find_t *tmp = elem;
-    while (elem->parent != elem)
+    while (elem->parent != NULL)
     {
         elem = elem->parent;
     }

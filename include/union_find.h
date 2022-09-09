@@ -14,6 +14,7 @@ typedef struct union_find
     struct union_find *parent;
     void *value;
     int height;
+    int id;
 } union_find_t;
 
 /**
